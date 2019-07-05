@@ -1,5 +1,6 @@
 package pl.lama.REST.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pl.lama.REST.domain.model.Employee;
 import pl.lama.REST.exeption.EmployeeNotFoundException;
@@ -10,6 +11,7 @@ import java.util.List;
 @RestController
 public class EmployeeController {
 
+    @Autowired
     private final EmployeeRepository employeeRepository;
 
     public EmployeeController(EmployeeRepository employeeRepository) {

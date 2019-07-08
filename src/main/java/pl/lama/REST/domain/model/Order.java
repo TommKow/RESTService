@@ -1,12 +1,11 @@
 package pl.lama.REST.domain.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+
+import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
+@Table(name = "CUSTOMER_ORDER")
 public class Order {
 
     @Id
@@ -14,12 +13,12 @@ public class Order {
     private Long id;
 
     private String description;
-    private String status;
+    private Status status;
 
     public Order() {
     }
 
-    public Order(String description, String status) {
+    public Order(String description, Status status) {
         this.description = description;
         this.status = status;
     }
@@ -40,11 +39,11 @@ public class Order {
         this.description = description;
     }
 
-    public String getStatus() {
+    public Status getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Status status) {
         this.status = status;
     }
 

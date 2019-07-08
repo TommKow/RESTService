@@ -12,14 +12,16 @@ public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
+    private String firstName;
+    private String lastName;
     private String role;
 
     public Employee() {
     }
 
-    public Employee(String name, String role) {
-        this.name = name;
+    public Employee(String firstName, String lastName, String role) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.role = role;
     }
 
@@ -31,12 +33,20 @@ public class Employee {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getfirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setfirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getRole() {
@@ -53,19 +63,19 @@ public class Employee {
         if (!(o instanceof Employee)) return false;
         Employee employee = (Employee) o;
         return Objects.equals(getId(), employee.getId()) &&
-                Objects.equals(getName(), employee.getName()) &&
+                Objects.equals(getfirstName(), employee.getfirstName()) &&
                 Objects.equals(getRole(), employee.getRole());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getName(), getRole());
+        return Objects.hash(getId(), getfirstName(), getRole());
     }
 
     @Override
     public String toString() {
         return "Employee{" +
-                "name='" + name + '\'' +
+                "firstName='" + firstName + '\'' +
                 ", role='" + role + '\'' +
                 '}';
     }
